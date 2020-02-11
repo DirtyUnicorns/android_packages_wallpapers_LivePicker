@@ -19,7 +19,9 @@
 
 <resources>
 
-    <style name="LivePickerTheme" parent="@android:style/Theme.DeviceDefault.Settings"/>
+    <style name="LivePickerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="titleBackground">#7FFFFFFF</item>
+    </style>
 
     <style name="Preview" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -28,7 +30,7 @@
 
         <!-- Set status bar and navigation buttons to be translucent. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/translucent_black</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 
         <!-- Button corner -->
         <item name="android:buttonCornerRadius">@*android:dimen/config_buttonCornerRadius</item>

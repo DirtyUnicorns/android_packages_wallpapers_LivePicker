@@ -18,9 +18,15 @@
 -->
 
 <resources>
+
+    <style name="LivePickerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="titleBackground">#70000000</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
     <style name="ButtonStyle" parent="@style/ButtonStyle.Base">
         <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
     <style name="AlertDialogStyle" parent="@android:style/Theme.DeviceDefault.Dialog.Alert"/>
+
 </resources>

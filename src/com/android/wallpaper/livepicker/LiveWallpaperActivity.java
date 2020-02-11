@@ -16,10 +16,13 @@
 
 package com.android.wallpaper.livepicker;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.app.ListActivity;
 import android.app.WallpaperInfo;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -32,6 +35,11 @@ public class LiveWallpaperActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.live_wallpaper_base);
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         mAdapter = new LiveWallpaperListAdapter(this);
         setListAdapter(mAdapter);
@@ -61,4 +69,16 @@ public class LiveWallpaperActivity extends ListActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            goUpToTopLevelSetting(this);
+            return true;
+        }
+        return false;
+    }
+
+    public static void goUpToTopLevelSetting(Activity activity) {
+        activity.finish();
+    }
 }
